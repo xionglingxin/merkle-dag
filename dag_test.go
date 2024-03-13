@@ -112,7 +112,7 @@ func TestDagStructure(t *testing.T) {
 	// 一个小文件的测试
 	smallFile := &TestFile{
 		name: "tiny",
-		data: []byte("这是一个用于测试的小文件"),
+		data: []byte("测试小文件"),
 	}
 	rootHash := Add(store, smallFile, hasher)
 	fmt.Printf("%x\n", rootHash)
@@ -122,7 +122,7 @@ func TestDagStructure(t *testing.T) {
 		mp: make(map[string][]byte),
 	}
 	hasher.Reset()
-	bigFileContent, err := os.ReadFile("D:\\Information\\作业=-=\\分布式\\merkle-dag\\213_2021131120_陈思州_1.rar")
+	bigFileContent, err := os.ReadFile("D:\Study\分布式系统\\Copy of 第三章 IPFS协议栈.pptx")
 	if err != nil {
 		t.Error(err)
 	}
@@ -140,7 +140,7 @@ func TestDagStructure(t *testing.T) {
 		mp: make(map[string][]byte),
 	}
 	hasher.Reset()
-	dirPath := "D:\\Information\\作业=-=\\分布式\\merkle-dag"
+	dirPath := "D:\merkle-dag"
 	entries, _ := ioutil.ReadDir(dirPath)
 	directory := &TestDir{
 		list: make([]Node, len(entries)),
