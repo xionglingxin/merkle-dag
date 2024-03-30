@@ -10,7 +10,7 @@ const STEP = 4
 
 // Hash to file
 func Hash2File(store KVStore, hash []byte, path string, hp HashPool) []byte {
-	// 根据hash和path， 返curObjBinary回对应的文件, hash对应的类型是tree
+	// 根据hash和path， 返回currentObjBinary对应的文件, hash对应的类型是tree
 	flag, _ := store.Has(hash)
 	// 判断kvstore里是否拥有hash这个key对应的value，如果有则进行拼装
 	if flag {
