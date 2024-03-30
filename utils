@@ -1,5 +1,6 @@
 package merkledag
 
+// 封装并实现dag2file文件所需的方法
 type TestFile struct {
 	name string
 	data []byte
@@ -34,6 +35,7 @@ func (iter *testDirIter) Next() bool {
 	return false
 }
 
+// 用于找到后继
 func (iter *testDirIter) Node() Node {
 	return iter.list[iter.iter]
 }
@@ -43,6 +45,7 @@ type TestDir struct {
 	name string
 }
 
+// 计算文件夹大小，将所有文件相加
 func (dir *TestDir) Size() uint64 {
 	var len uint64 = 0
 	for i := range dir.list {
@@ -67,6 +70,7 @@ func (dir *TestDir) It() DirIterator {
 	return it
 }
 
+// 实现四个增删改查的基本函数以用于测试
 type HashMap struct {
 	mp map[string]([]byte)
 }
